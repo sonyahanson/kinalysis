@@ -56,37 +56,37 @@ Abl_out_rotate =  [A-(2*math.pi) if A >= 2.1 else A for A in Abl_out_dihedrals]
 Src_in_rotate =  [S-(2*math.pi) if S >= 2.1 else S for S in Src_in_dihedrals]
 Src_out_rotate =  [S-(2*math.pi) if S >= 2.1 else S for S in Src_out_dihedrals]
 
-plt.figure(figsize=(10,2))
+plt.figure(figsize=(10,3))
 
 for i in range(len(Abl_in_rotate)):
     if i == 0:
-        plt.scatter(Abl_in_rotate[i],0, edgecolors="r", marker='o', linewidth='3', s=80, facecolors='none',label='ABL DFG-in')
+        plt.scatter(Abl_in_rotate[i],0.5, edgecolors="r", marker='o', linewidth='3', s=80, facecolors='none',label='ABL DFG-in')
     else:
-        plt.scatter(Abl_in_rotate[i],0, edgecolors="r", marker='o', linewidth='3', s=80, facecolors='none')
+        plt.scatter(Abl_in_rotate[i],0.5, edgecolors="r", marker='o', linewidth='3', s=80, facecolors='none')
 for i in range(len(Abl_out_rotate)):
     if i == 0:
-        plt.scatter(Abl_out_rotate[i],0, edgecolors="m", marker='o', linewidth='3', s=80, facecolors='none',label='ABL DFG-out')
+        plt.scatter(Abl_out_rotate[i],0.25, edgecolors="m", marker='o', linewidth='3', s=80, facecolors='none',label='ABL DFG-out')
     else:
-        plt.scatter(Abl_out_rotate[i],0, edgecolors="m", marker='o', linewidth='3', s=80, facecolors='none')
+        plt.scatter(Abl_out_rotate[i],0.25, edgecolors="m", marker='o', linewidth='3', s=80, facecolors='none')
 for i in range(len(Src_in_rotate)):
     if i == 0:
-	plt.scatter(Src_in_rotate[i],0, edgecolors="b", marker='o', linewidth='3', s=80, facecolors='none',label='SRC DFG-in')
+	plt.scatter(Src_in_rotate[i],-0.25, edgecolors="b", marker='o', linewidth='3', s=80, facecolors='none',label='SRC DFG-in')
     else:
-        plt.scatter(Src_in_rotate[i],0, edgecolors="b", marker='o', linewidth='3', s=80, facecolors='none')
+        plt.scatter(Src_in_rotate[i],-0.25, edgecolors="b", marker='o', linewidth='3', s=80, facecolors='none')
 for i in range(len(Src_out_rotate)):
     if i == 0:
-        plt.scatter(Src_out_rotate[i],0, edgecolors="g", marker='o', linewidth='3', s=80, facecolors='none',label='SRC DFG-out')
+        plt.scatter(Src_out_rotate[i],-0.5, edgecolors="g", marker='o', linewidth='3', s=80, facecolors='none',label='SRC DFG-out')
     else:
-        plt.scatter(Src_out_rotate[i],0, edgecolors="g", marker='o', linewidth='3', s=80, facecolors='none')
+        plt.scatter(Src_out_rotate[i],-0.5, edgecolors="g", marker='o', linewidth='3', s=80, facecolors='none')
 
 
 plt.xlabel('Dihedral (radians)')
-plt.ylim((-0.5, 0.5))
+plt.ylim((-0.75, 0.75))
 plt.xlim((-4,4))
 plt.yticks([])
 plt.legend()
 
 plt.tight_layout()
-plt.savefig('DFG_dihedral_Roux_1D.png')
+plt.savefig('DFG_dihedral_Roux_1D.png',dpi=300)
 
 
